@@ -1,17 +1,12 @@
-# qsharp-library-template
+# Durr Hoyer Library
 
 [![Gitter](https://badges.gitter.im/qsharp-community/community.svg)](https://gitter.im/qsharp-community/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-Template repo to make starting new Q# library projects easier!
+An open source implementation of the quantum minimum searching algorithm and the quantum exponential searching algorithm. 
 
-You can find a blog write-up about this template at [sckaiser.dev](https://www.sckaiser.dev/blog/2020/06/09/qsharp-libraries.html).
-Have other questions on how to use this template?
-Ask on the [qsharp.community](https://qsharp.community/) [gitter](https://gitter.im/qsharp-community/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)!
+Currently functionality allows for finding a unique solution, paired with QMSA this is done in O(sqrt(N)) at a 50% success rate. 
 
----
-**NOTE:**
-Are you working on a research paper in quantum computing?
-Also check out this [quantum research template repo](https://github.com/cgranade/quantum-research-template/) for reseach projects with Q#, LaTeX and Python all working in a nice docker container.
+Future functionality will allow for finding mulitple solutions with an alleviated O() leading to a better success rate.
 
 ---
 
