@@ -1,5 +1,5 @@
 # Written By Mridul Sarkar
-# 6/16/20 14:18AM
+# 7/17/20 12:50AM
 
 
 import time
@@ -37,13 +37,13 @@ class DH(object):
 
                 while t[y] > t[y_prime]:
 
-                    #if N // 2 :
+                    if N // 2 :
 
-                    y_prime= Algorithm.simulate(N,y)
+                        y_prime= Algorithm.simulate(N,y)
 
-                    #else: 
+                    else: 
 
-                        #y_prime=Algorithm_Odd.simulate(N,y)
+                        y_prime=Algorithm_Odd.simulate(N,y)
 
                 if t[y_prime] < t[y]:
 

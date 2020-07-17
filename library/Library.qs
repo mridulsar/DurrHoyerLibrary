@@ -30,7 +30,7 @@
 
                     ApplyToEachA(H,Register); // Apply Adjunct Hadamard to register
 
-                    ApplyConditionalPhase(LittleEndian(Register)); //Reflect qubits that are 1s
+                    Z(LittleEndian(Register)); //Reflect qubits that are 1s
                 }
         }
     }
@@ -56,7 +56,7 @@
 
                     QFT(BigEndian(Register)); // Inverse QFT by using BigEndian
 
-                    ApplyConditionalPhase(LittleEndian(Register)); //Reflect qubits that are 1s
+                    Z(LittleEndian(Register)); //Reflect qubits that are 1s
                 }
         }
     }
@@ -66,16 +66,8 @@
     {
         using (aux = Qubit()) 
         {
-            (ControlledOnInt(0,Z))(register!,aux); // If qubit is 0 flip it!
+            (ControlledOnInt(0,X))(register!,aux); // If qubit is 0 flip it!
         }
     }
 
-
-    operation ApplyConditionalPhase(register : LittleEndian) : Unit is Adj + Ctl 
-    {
-        using (aux = Qubit()) 
-        {
-            (ControlledOnInt(1,Z))(register!,aux); // If qubit is 1 flip it!
-        }
-    }
 }
