@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="QMSA.py" />
   </ItemGroup>
 
