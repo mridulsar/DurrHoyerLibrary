@@ -17,20 +17,15 @@
             within
                 {   
                     PrepareUniformSuperposition(TableLength,LittleEndian(Register)); // Create Uniform Superposition of all indices
-
                     let Marker = Register[RandomIndex]; // Grab the qubit in the RandomIndex and set it aside
-
                     Controlled Z(Register,Marker); // Apply Oracle to flip all states that are T[j]<T[y]
                 }
             apply 
                 {
                     ApplyToEach(H,Register); // Apply Hadamard to register
-
                     ApplyConditionalPhase_0(LittleEndian(Register)); // Reflect qubits that are 0s
-
                     ApplyToEachA(H,Register); // Apply Adjunct Hadamard to register
-
-                    Z(LittleEndian(Register)); //Reflect qubits that are 1s
+                    ApplyConditionalPhase(LittleEndian(Register)); //Reflect qubits that are 1s
                 }
         }
     }
@@ -43,31 +38,33 @@
             within
                 {   
                     PrepareUniformSuperposition(TableLength,LittleEndian(Register)); // Create Uniform Superposition of all indices
-
                     let Marker = Register[RandomIndex]; // Grab the qubit in the RandomIndex and set it aside
-
                     Controlled Z(Register,Marker); // Apply Oracle to flip all states that are T[j]<T[y]
                 }
             apply 
                 {
                     QFTLE(LittleEndian(Register)); // Implemntation for odd number of table entries
-
                     ApplyConditionalPhase_0(LittleEndian(Register)); // Reflect qubits that are 0s
-
                     QFT(BigEndian(Register)); // Inverse QFT by using BigEndian
-
-                    Z(LittleEndian(Register)); //Reflect qubits that are 1s
+                    ApplyConditionalPhase(LittleEndian(Register)); //Reflect qubits that are 1s
                 }
         }
     }
 
-
-    operation ApplyConditionalPhase_0(register: LittleEndian) : Unit is Adj + Ctl
-    {
-        using (aux = Qubit()) 
+        // If qubit is 0 flip it!
+        operation ApplyConditionalPhase_0(register: LittleEndian) : Unit is Adj + Ctl
         {
-            (ControlledOnInt(0,X))(register!,aux); // If qubit is 0 flip it!
+            using (aux = Qubit()) 
+            {
+                (ControlledOnInt(0,Z))(register!,aux); 
+            }
         }
-    }
-
+        // If qubit is 1 flip it!
+        operation ApplyConditionalPhase(register : LittleEndian) : Unit is Adj + Ctl 
+        {
+            using (aux = Qubit()) 
+            {
+                (ControlledOnInt(1,Z))(register!,aux); 
+            }
+        }
 }

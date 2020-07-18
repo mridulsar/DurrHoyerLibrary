@@ -4,7 +4,6 @@
     open Microsoft.Quantum.Diagnostics;
     open Microsoft.Quantum.Intrinsic;
 
-
     @Test("QuantumSimulator")
     operation AllocateQubit () : Unit {
         
