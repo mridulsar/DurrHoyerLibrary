@@ -6,7 +6,7 @@ import time
 import numpy as np
 import qsharp
 from qsharp import Result
-from QESA import Algorithm
+from QESA import Algorithm_Even, Algorithm_Odd
 
 #https://arxiv.org/pdf/quant-ph/9605034.pdf / https://arxiv.org/pdf/quant-ph/9607014.pdf
 
@@ -39,7 +39,7 @@ class DH(object):
 
                     if N // 2 :
 
-                        y_prime= Algorithm.simulate(N,y)
+                        y_prime= Algorithm_Even.simulate(N,y)
 
                     else: 
 
