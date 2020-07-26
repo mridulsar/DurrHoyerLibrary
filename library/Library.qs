@@ -9,6 +9,11 @@
     open Microsoft.Quantum.Core;
     open Microsoft.Quantum.Convert;
 
+    operation GetLowestInList(List: Int[]) : Int
+    {
+        //Stub to implement
+        return 0;
+    }
 
     operation Algorithm_Even(TableLength : Int, RandomIndex : Int) : Unit
     {
