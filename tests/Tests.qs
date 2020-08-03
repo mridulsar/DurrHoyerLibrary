@@ -18,9 +18,9 @@
     @Test("QuantumSimulator")
     operation RetrieveSmallestNumberTest () : Unit {
         let list = [2,1,3];
-        let expeted = 1;
+        let expected = 1;
         let actual = GetLowestInList(list);
-        EqualityFactI(actual, expeted, "Expected the lowest value to be returned.");
+        EqualityFactI(actual, expected, "Expected the lowest value to be returned.");
 
         Message("Test passed.");
     }
@@ -28,9 +28,9 @@
     @Test("QuantumSimulator")
     operation RetrieveSmallestNumberEmptyListTest () : Unit {
         let list = new Int[0];
-        let expeted = 0;
+        let expected = 0;
         let actual = GetLowestInList(list);
-        EqualityFactI(actual, expeted, "Expected 0 for empty list.");
+        EqualityFactI(actual, expected, "Expected 0 for empty list.");
 
         Message("Test passed.");
     }
