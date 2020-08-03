@@ -1,7 +1,6 @@
 # Written By Mridul Sarkar
 # 7/17/20 12:50AM
 
-
 import time
 import numpy as np
 import qsharp
