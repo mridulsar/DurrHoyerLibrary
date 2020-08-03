@@ -10,6 +10,4 @@ Future functionality will allow for finding mulitple solutions with an alleviate
 
 ---
 
-## Things to change once you create a new project with this repo:
-- In `.github\workflows\publish.yml` change line 28 so that CHANGEME is the account name of the owner of this repo.
-- In `CODE_OF_CONDUCT.md` change the `CHANGEME` on line 58 to the project or maintainer's email that will be responsible for handling reporting.
+Copyright (c) 2019 [Sarah Kaiser] for the template of this repo
