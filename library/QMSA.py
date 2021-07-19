@@ -2,7 +2,7 @@
 # 2/12/21 4:39 AM
 
 
-import time
+from time import perf_counter #effeciency of code.
 import numpy as np
 import qsharp
 from qsharp import Result
@@ -27,9 +27,9 @@ class DH(object):
         y = self.y
 
         t = self.table
-
+        
         for i in range(N):
-
+           
             if N // 2 :
                 y_prime = Algorithm_Even.simulate(N,y)
                 if table[y_prime] < table[y]:
@@ -41,4 +41,4 @@ class DH(object):
                     y = y_prime
         if i == N:
             y = 101 # numpys random array only creates random ints between 1 and 100, assuring that even if an array of all 100s this will catch when the program runs too long
-        return y                                                      
+        return y,end                                                      
